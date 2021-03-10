@@ -13,7 +13,7 @@ import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import logo from "./sample-logo.JPG"
+import logo from "./sample-logo1.JPG"
 
 function Copyright() {
   return (
@@ -50,6 +50,12 @@ const useStyles = makeStyles((theme) => ({
   logoSignIn:{width:"100px", height:"100px"}
 }));
 
+const chager= (e)=> {
+  e.preventDefault();
+ 
+  console.log("e",e)
+  };
+  
 export default function SignIn() {
   const classes = useStyles();
 
@@ -75,6 +81,7 @@ export default function SignIn() {
             name="email"
             autoComplete="email"
             autoFocus
+            onChange={(e)=> chager}
           />
           <TextField
             variant="outlined"
@@ -86,6 +93,7 @@ export default function SignIn() {
             type="password"
             id="password"
             autoComplete="current-password"
+           
           />
           <FormControlLabel 
             control={<Checkbox name = "remember" value="remember" color="primary" />}
@@ -97,17 +105,18 @@ export default function SignIn() {
             variant="contained"
             color="primary"
             className={classes.submit}
+            
           >
             Sign In
           </Button>
           <Grid container>
             <Grid item xs>
-              <Link href="#" variant="body2">
+              <Link href="/forgotpassword" variant="body2">
                 Forgot password?
               </Link>
             </Grid>
             <Grid item>
-              <Link href="#" variant="body2">
+              <Link href="/signUp" variant="body2">
                 {"Don't have an account? Sign Up"}
               </Link>
             </Grid>

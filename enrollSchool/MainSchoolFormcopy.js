@@ -151,7 +151,7 @@ export default function MainSchoolFormcopy() {
                         <div key={index}>
                           {/* <Field
                             placeholder="user name"
-                            name={`users.${index}.name`}
+                             name={`users.${index}.name`}
                           />
                           <ErrorMessage name={`users.${index}.name`} /> */}
                           <FormikControl control= "input" name ={`users.${index}.name`} label = "Name of School" id = {`users.${index}.name`}/>
