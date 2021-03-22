@@ -33,7 +33,6 @@ function ManagerProfileBody() {
 
     return (
         <div>
-            
             <Grid container spacing={9} >
 
                 <Grid item lg={3} xs={12}>    

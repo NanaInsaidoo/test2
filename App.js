@@ -14,6 +14,7 @@ import PageNotFound from './enrollSchool/Admin/PageNotFound'
 
 import SummaryStatAdmin from './enrollSchool/Admin/SummaryStatAdmin'
 
+import AddManagerByAdmin from './enrollSchool/Admin/AddManagerByAdmin'
 
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -28,26 +29,27 @@ function App() {
   return (
     <div className="App-header">
 {/* <LeftHandMenu/> */}
-{/* <Test2/> */}
+<Test2/>
 {/* <Login/> */}
       {/* <MyNavBar/>
 <MyFrontPage/>
 <SignIn/> */}
 
-      <Router>
+      {/* <Router>
         <Switch>
           <Route path="/" exact component={SignIn} />
           <Route path="/forgotpassword" exact component={ForgotPassword} />
           <Route path="/signup" exact component={SignUp} />
           <Route path="/admin" exact component={AdminWelcome} />
           <Route path="/managerProfile" exact component={ManagerProfile} />
+          <Route path="/addManager" exact component={AddManagerByAdmin} />
+
           <div>
           <Route component={PageNotFound} />          
           </div>
 
-
         </Switch>
-      </Router>
+      </Router> */}
 
       {/* <MyGrid/> */}
       {/* <ForgotPassword/> */}

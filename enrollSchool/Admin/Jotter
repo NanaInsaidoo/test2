@@ -1,0 +1,34 @@
+   <TextField
+          id="nameOfSchool"
+          label="Name Of Schoo;"
+          type="text"
+          autoComplete="current-password"
+          onChange={formik.handleChange}
+          value={formik.values.nameOfSchool}
+          margin="normal"
+          variant="outlined"
+          fullWidth
+          helperText=   {formik.touched.nameOfSchool && formik.errors.nameOfSchool ? (
+            <div>{formik.errors.nameOfSchool}</div>
+          ) : null}
+          error = {formik.touched.nameOfSchool && formik.errors.nameOfSchool }
+
+                    value={formik.values.users[index].email}
+
+                    [
+    {
+        "name": "",
+        "email": "diamatic2000@yahoo.co.uk"
+    },
+    {
+        "name": "",
+        "email": "rgangu@rvglobalsolutions.com"
+    }
+]
+
+
+<div class="MuiFormControl-root jss140 MuiFormControl-fullWidth">
+<label class="MuiFormLabel-root MuiInputLabel-root jss137  MuiInputLabel-formControl MuiInputLabel-animated" data-shrink="false" for="float">With floating label</label>
+<div class="MuiInputBase-root MuiInput-root MuiInput-underline jss133 MuiInputBase-formControl MuiInput-formControl"><input aria-invalid="false" id="float" type="text" class="MuiInputBase-input MuiInput-input jss141" value="">
+</div>
+</div>

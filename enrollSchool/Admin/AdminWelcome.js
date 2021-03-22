@@ -9,9 +9,6 @@ import ListOfManager from "./ListOfManager"
 import Box from '@material-ui/core/Box';
 import SummaryStatAdmin from "./SummaryStatAdmin"
 
-
-
-
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
@@ -69,7 +66,8 @@ const handleDrawerClose = () => {
         <div  className={classes.root}>
             <AdminNavBar/>
             
-            <div onClick={handleDrawerClose}> <SummaryStatAdmin/>
+            <div onClick={handleDrawerClose}>
+                 <SummaryStatAdmin/>
              <Box mt ={10} fontWeight="Bold" Font size = {"42"} textAlign="center">List of Accout Managers</Box>
              <Box mt={4}>
 

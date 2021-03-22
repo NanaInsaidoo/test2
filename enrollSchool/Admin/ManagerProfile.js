@@ -138,7 +138,6 @@ export default function AdminWelcome() {
                         <Card >
                             <CardContent className={classes.paper1} >
                             <Box className={classes.Box} class=" MuiTypography-h6" textAlign="left"
-                                
                             >
                                 JOHN SOWER</Box>
 
@@ -150,7 +149,6 @@ export default function AdminWelcome() {
                                 </CardContent>
                         </Card>
                     </Grid>
-
 
 
                     <Grid item xs={12} sm={12} md={12} lg={6}>

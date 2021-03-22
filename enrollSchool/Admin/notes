@@ -2,4 +2,5 @@ Cant type in search input when md break point is reached
 Darawer doesnt close on click out
 icon for showing profile setting too close to the edge use Box to move to left slittle
 Manager Profile - get the Text to display in the middle
-List of managers not displaying properly when 
+List of managers not displaying properly when.
+To use the stylish forms then refactor to have the TextField rendered in the main form page where formik is established0.

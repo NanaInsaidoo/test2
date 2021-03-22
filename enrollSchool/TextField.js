@@ -20,13 +20,13 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-export default function Input(props) {
+export default function myTextField(props) {
   const classes = useStyles();
     const {label, name} = props
     return (
         <div >
-             <label class=" MuiInputLabel-animated" htmlFor = {name}> {label} </label>
-                <Field className = {classes.MyInput} type = 'text' id = {name} 
+             <label htmlFor = {name}> {label} </label>
+                <TextField  type = 'text' id = {name} 
                 name  = {name} 
                 
                  />

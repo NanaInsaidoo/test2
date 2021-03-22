@@ -53,7 +53,7 @@ function EnrollmentForm () {
       {formik => {
         return (
           <Form>
-                       <FormikControl control= "input" name ="nameOfSchool" label = "Name of School" id = "nameOfSchool"/>
+         <FormikControl control= "input" name ="nameOfSchool" label = "Name of School" id = "nameOfSchool"/>
         <br/>
             <FormikControl control= "input" name ="schoolRegistrationID" label = "School Registration ID " id = "schoolRegistrationID"/>
         <br/>
