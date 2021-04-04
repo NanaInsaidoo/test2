@@ -4,3 +4,22 @@ icon for showing profile setting too close to the edge use Box to move to left s
 Manager Profile - get the Text to display in the middle
 List of managers not displaying properly when.
 To use the stylish forms then refactor to have the TextField rendered in the main form page where formik is established0.
+
+Add images to /addmanager and /AddSchool use ".iconshock.com" this will make form prettier - Medium
+
+During adding of classes for the first time, just choose number of sections/classes or streams.
+...the app will adopt an inbuilt naming of multiple stream using the alphabets for example Class 1 "A"
+...the class aliases can be added later when entering the specific class profile.
+...the profile will contain mostly the stats of the class e.g absenteism rate etc.
+...students may be moved to any class.
+
+
+When setting up a school. The RAM,SAM,UAM will only add the basic info for setting up the school. 
+...One incomplete Admin account. The Admin can log in later and more data.
+...Once the school account is created and approved, the ram,sam,uam can add log in and later add other staff ,gaurdians ,students ,and set up fees etc  
+
+Billing:
+_________
+
+Billing items shall be created and applied to entire class or specific student. 
+...Adjustments may be made by way of discounts(approved) to reach personalised billing fpr unique students

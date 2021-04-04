@@ -1,4 +1,4 @@
-import AddSchoolDetail from './enrollSchool/AddSchoolDetail';
+import AddSchoolDetail from './enrollSchool/Admin/AddSchoolDetail';
 import EnrollmentForm from './enrollSchool/EnrollmentForm';
 import MainSchoolFormcopy from './enrollSchool/MainSchoolFormcopy';
 import MainSchoolForm from './enrollSchool/MainSchoolForm';
@@ -25,35 +25,50 @@ import AdminWelcome from './enrollSchool/Admin/AdminWelcome';
 import LeftHandMenu from "./enrollSchool/Admin/LeftHandMenu"
 import ManagerProfile from './enrollSchool/Admin/ManagerProfile';
 
+import AddSchoolMain from './enrollSchool/Admin/AddSchoolMain';
+import AddSchoolClass from './enrollSchool/Admin/AddSchoolClass';
+import AddSchoolStaff from './enrollSchool/Admin/AddSchoolStaff';
+import FormMain from './enrollSchool/Admin/FormMain';
+import AAA from "./enrollSchool/Admin/AAA"
+
+import AddSchMainForm from './enrollSchool/Admin/AddSchMainForm';
+import SchoolsListAdmin from './enrollSchool/Admin/SchoolsListAdmin';
+
 function App() {
   return (
     <div className="App-header">
 {/* <LeftHandMenu/> */}
-<Test2/>
+{/* <Test2/> */}
 {/* <Login/> */}
-      {/* <MyNavBar/>
+{/* <MyNavBar/>
 <MyFrontPage/>
 <SignIn/> */}
+{/* <AddSchoolClass/>
+<AddSchoolStaff/> */}
 
-      {/* <Router>
+
+      <Router>
         <Switch>
           <Route path="/" exact component={SignIn} />
           <Route path="/forgotpassword" exact component={ForgotPassword} />
           <Route path="/signup" exact component={SignUp} />
           <Route path="/admin" exact component={AdminWelcome} />
+          <Route path="/adminSchools" exact component={SchoolsListAdmin} />
+          <Route path="/admin" exact component={AdminWelcome} />
           <Route path="/managerProfile" exact component={ManagerProfile} />
           <Route path="/addManager" exact component={AddManagerByAdmin} />
-
+          <Route path="/addSchool" exact component={AddSchMainForm} />
           <div>
           <Route component={PageNotFound} />          
           </div>
-
         </Switch>
-      </Router> */}
-
+      </Router>
+{/* <AddSchMainForm/> */}
+      {/* <AAA/> */}
       {/* <MyGrid/> */}
       {/* <ForgotPassword/> */}
       {/* <Form12/> */}
+      {/* <FormMain/> */}
       {/* <MainSchoolFormcopy />  */}
       {/* <MainSchoolForm />  */}
       {/* <MultiStepForm/> */}

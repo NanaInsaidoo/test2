@@ -4,7 +4,8 @@ import {
   StepLabel,
 
   Typography,
-  CircularProgress
+  CircularProgress,
+  Grid
 } from '@material-ui/core';
 import React, { useState } from 'react';
 import Form1 from './Form1';
@@ -16,9 +17,9 @@ import FormikControl from "./FormikControl";
 import * as Yup from 'yup';
 import ValidateForm from "./ValidateForm"
 import InitialValue from "./InitialValue"
-
-
-
+import AddSchoolDetail from './Admin/AddSchoolDetail';
+import AddSchoolClass from './Admin/AddSchoolClass';
+import AddSchoolStaff from './Admin/AddSchoolStaff';
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -29,27 +30,25 @@ export default function Form12() {
   const [activeStep, setActiveStep] = useState(0);
   // const { values, submitForm } = useFormikContext();
   // console.log("values",values)
-  const steps = ['Form 1', 'Form 2', 'Success'];
+  const steps = ['Form 1', 'Form 2','Form 1', 'Success'];
 
   const isLastStep = activeStep === steps.length - 1;
 
   const initialValues = {
     nameOfSchool: "",
-    schoolRegistrationID: "",
-    businessRegistrationID: "",
-    primaryPhoneNumber: "",
+    // schoolRegistrationID: "",
+    // businessRegistrationID: "",
+    // primaryPhoneNumber: "",
 
   }
 
-  const validationSchema = ValidateForm[activeStep]
-
+  const validationSchema = null
   const onSubmit = async (submitProps, e) => {
     await sleep(1000);
     e.setSubmitting(false);
 
     setActiveStep(activeStep + 1);
     // console.log("initial values",initialValues);
-
 
     console.log("submitProps", submitProps);
     console.log("e-values", e);
@@ -59,11 +58,11 @@ export default function Form12() {
   function _renderStepContent(activeStep) {
     switch (activeStep) {
       case 0:
-        return <Form1 />;
+        return <AddSchoolDetail next= {next} previous={previous} value={initialValues.nameOfSchool} />;
       case 1:
-        return <Form2 />;
+        return <AddSchoolClass />;
       case 2:
-        return <Form3 />;
+        return <AddSchoolStaff />;
       default:
         return <div>Congratulation submitted</div>;
     }
@@ -94,7 +93,6 @@ export default function Form12() {
   return (
 
 
-
     <Formik
       initialValues={initialValues}
       onSubmit={onSubmit}
@@ -119,7 +117,9 @@ export default function Form12() {
             <Form>
               {_renderStepContent(activeStep)}
 
-              <button
+              
+
+              {/* <button
                 type='submit'
               >
                 Next
@@ -134,7 +134,7 @@ export default function Form12() {
                 Previous
                             </button>
 
-              {activeStep}
+              {activeStep} */}
 
 
               <FieldArray
@@ -204,7 +204,33 @@ export default function Form12() {
 
                 />
               )}
+
+<Grid   container
+                          direction="row"
+                          justify="center"
+                          alignItems="flex-start" >
+                         
+                      <Grid  >
+                          <Button size="large"   type='button'
+                onClick={previous} variant="outlined" color="primary"  >Previous</Button>
+                      </Grid>
+
+                      <Grid  >
+                              <Button
+                                  variant="contained"
+                                  color="primary"
+                                  size="large"
+                                  // className={classes.button}
+                                  type ="submit"                           
+                        >
+                                         Next
+                              </Button>
+                      </Grid>
+
+                  </Grid>
             </Form>
+
+            
           </div>
 
         )

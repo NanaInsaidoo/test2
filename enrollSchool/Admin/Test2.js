@@ -2,14 +2,14 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import { Button, TextField, Typography } from '@material-ui/core';
+import { Button, Divider, TextField, Typography } from '@material-ui/core';
 import AdminNavBar from "./AdminNavBar"
 import UserSettings from "./UserSettings"
 import ListOfManager from "./ListOfManager"
 import Box from '@material-ui/core/Box';
 import SummaryStatAdmin from "./SummaryStatAdmin"
 import { Form } from 'formik';
-import { grey, deepPurple } from "@material-ui/core/colors";
+import { grey, deepPurple, red } from "@material-ui/core/colors";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -59,13 +59,14 @@ const useStyles = makeStyles((theme) => ({
         textAlign: 'left',
         background: "",
         width: "100%",
-        height: "300px",
+        height: "auto",
 
 
     },
     label: {
         display: "block",
         padding:"23px"    },
+        
     inputbox:{
         display: "block",
         width: "70%",
@@ -76,9 +77,13 @@ const useStyles = makeStyles((theme) => ({
         // background-color: "#fff",
         // background-image:" none",
         // border: 1px solid "#ccc",
-        // border-radius: "4px",
+         borderRadius: "5px",
         border: `1px solid ${deepPurple[500]}`,
-    }
+    },
+    divider: {
+        // Theme Color, or use css color in quote
+        // background: "grey",
+    },
 
 }));
 
@@ -91,7 +96,7 @@ function Test2() {
             <Grid container className={classes.root} justify="center"
             >
 
-                <Grid item xs={6} className={classes.item0} >
+                <Grid item sm={10} md ={10} lg={6} className={classes.item0} >
                     <Grid container
                     >
 
@@ -99,34 +104,174 @@ function Test2() {
 
                         <Paper className={classes.paper}>
                             <Grid container>
-                                <Grid item sm={6} >
+                                <Grid item xs={12} md={6}>
                                     <label >
-                                        <Box mb={1} mt={3}> First Name:</Box>
-                    <input type="text" className={classes.inputbox} />
+                                        <Box mb={1} mt={3}  fontWeight="fontWeightMedium"> First Name:</Box>
+                                            <input type="text" className={classes.inputbox} required= "true" />
                                     </label>
+                                
                                 </Grid>
-                                <Grid item sm={6}>
-                                <label >
-                                        <Box mb={1} mt={3}> Last  Name:</Box>
-                    <input type="text" className={classes.inputbox} />
+                                <Grid item xs={12} md={6}>
+                                     <label >
+                                        <Box mb={1} mt={3}  fontWeight="fontWeightMedium"> Last  Name:</Box>
+                                               <input type="text" className={classes.inputbox} />
                                     </label>
                                 </Grid>
 
-                                
-                                <Grid item sm={6}>
-                                <label >
-                                        <Box mb={1} mt={3}> Middle  Name:</Box>
-                    <input type="text" className={classes.inputbox} />
+                                <Grid item xs={12} md={6}>
+                                    <label >
+                                        <Box mb={1} mt={3}  fontWeight="fontWeightMedium"> Middle  Name:</Box> 
+                                                <input type="text" className={classes.inputbox} />
                                     </label>
                                 </Grid>
-                                <Grid item sm={6}>
-                                <label >
-                                        <Box mb={1} mt={3}> Date of Birth:</Box>
-                    <input type="text" className={classes.inputbox} />
+                                
+                                <Grid xs={12} md={6}>
+                                    <label >
+                                        <Box mb={1} mt={3}  fontWeight="fontWeightMedium"> Date of Birth:</Box>
+                                                 <input type="text" className={classes.inputbox} />
+                                    </label>
+                                </Grid>
+
+
+                                <Grid xs={12} md={6}>
+                                    <label >
+                                        <Box mb={1} mt={3}  fontWeight="fontWeightMedium"> Gender:</Box>
+                                                 <input type="text" className={classes.inputbox} />
                                     </label>
                                 </Grid>
 
                             </Grid>
+
+                            <Box mt={6}>
+                                <Divider className={classes.divider} />
+                            </Box>
+
+
+                            <Grid container>
+                                <Grid item xs={12} md={6}>
+                                    <label >
+                                        <Box mb={1} mt={3}  fontWeight="fontWeightMedium"> primary Number:</Box>
+                                            <input type="text" className={classes.inputbox} />
+                                    </label>
+                                
+                                </Grid>
+                                <Grid item xs={12} md={6}>
+                                     <label >
+                                        <Box mb={1} mt={3}  fontWeight="fontWeightMedium"> Secondary Phone number:</Box>
+                                               <input type="text" className={classes.inputbox} />
+                                    </label>
+                                </Grid>
+
+                                <Grid item xs={12} md={6}>
+                                    <label >
+                                        <Box mb={1} mt={3}  fontWeight="fontWeightMedium"> Eamil Address:</Box> 
+                                                <input type="text" className={classes.inputbox} />
+                                    </label>
+                                </Grid>
+                                
+                                <Grid xs={12} md={6}>
+                                    <label >
+                                        <Box mb={1} mt={3}  fontWeight="fontWeightMedium"> Confirm Email Address:</Box>
+                                                 <input type="text" className={classes.inputbox} />
+                                    </label>
+                                </Grid>
+                                            
+                                <Grid xs={12}>
+
+                                     <Box mb={1} mt={3}  fontWeight="fontWeightMedium"> Address:</Box>
+                                </Grid>
+                                <Grid xs={12} md={6}>
+                                    <label >
+                                        <Box mb={1} mt={3}  fontWeight="fontWeightMedium"> House Number or Description :</Box>
+                                                 <input type="text" className={classes.inputbox} />
+                                    </label>
+                                </Grid>
+                                
+
+                               
+                                
+
+                                <Grid xs={12} md={6}>
+                                    <label >
+                                        <Box mb={1} mt={3}  fontWeight="fontWeightMedium"> Town:</Box>
+                                                 <input type="text" className={classes.inputbox} />
+                                    </label>
+                                </Grid>
+
+                                <Grid xs={12} md={6}>
+                                    <label >
+                                        <Box mb={1} mt={3}  fontWeight="fontWeightMedium"> City:</Box>
+                                                 <input type="text" className={classes.inputbox} />
+                                    </label>
+                                </Grid>
+                                <Grid xs={12} md={6}>
+                                    <label >
+                                        <Box mb={1} mt={3}  fontWeight="fontWeightMedium"> Region:</Box>
+                                                 <input type="text" className={classes.inputbox} />
+                                    </label>
+                                </Grid>
+
+                            </Grid>
+                            <Box mt={6}>
+                                <Divider className={classes.divider} />
+                            </Box>
+
+
+
+                            <Grid container>
+
+                                <Grid item xs={12} md={4}>
+                                    <label >
+                                        <Box mb={1} mt={3}  fontWeight="fontWeightMedium"> Staff Type:</Box>
+                                            <input type="text" className={classes.inputbox} />
+                                    </label>
+                                </Grid>
+
+                                <Grid item xs={12} md={4}>
+                                    <label >
+                                        <Box mb={1} mt={3}  fontWeight="fontWeightMedium"> Staff Rank:</Box>
+                                            <input type="text" className={classes.inputbox} />
+                                    </label>
+                                </Grid>
+                                <Grid item xs={12} md={4}>
+                                    <label >
+                                        <Box mb={1} mt={3}  fontWeight="fontWeightMedium"> Date Hired:</Box>
+                                            <input type="text" className={classes.inputbox} />
+                                    </label>
+                                </Grid>
+
+                                <Grid item xs={12} md={4}>
+                                    <label >
+                                        <Box mb={1} mt={3}  fontWeight="fontWeightMedium"> Upload Picture:</Box>
+                                            <input type="text" className={classes.inputbox} />
+                                    </label>
+                                </Grid>
+
+                                <Grid item xs={12} md={4}>
+                                    <label >
+                                        <Box mb={1} mt={3}  fontWeight="fontWeightMedium"> Upload Resume:</Box>
+                                            <input type="text" className={classes.inputbox} />
+                                    </label>
+                                </Grid>
+                               
+                                <Grid item xs={12} md={4}>
+                                    <label >
+                                        <Box mb={1} mt={3}  fontWeight="fontWeightMedium"> Upload ID:</Box>
+                                            <input type="text" className={classes.inputbox} />
+                                    </label>
+                                </Grid>
+                               
+                               
+
+                            </Grid>
+
+                            
+
+                            <Box mt={6}>
+                                <Divider className={classes.divider} />
+                            </Box>
+
+
 
                         </Paper>
 

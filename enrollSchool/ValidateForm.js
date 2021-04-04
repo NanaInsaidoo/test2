@@ -6,16 +6,16 @@ export default  [
 
     Yup.object({
 
-        nameOfSchool: Yup.string().required('required'),
-        schoolRegistrationID: Yup.string().required('Required')
+        // nameOfSchool: Yup.string().required('required'),
+        // // schoolRegistrationID: Yup.string().required('Required')
         
 
     }),
      Yup.object({
 
         
-        businessRegistrationID: Yup.string().required('Required'),
-        primaryPhoneNumber: Yup.string().required('Required'),
+        // businessRegistrationID: Yup.string().required('Required'),
+        // primaryPhoneNumber: Yup.string().required('Required'),
 
     })
 ]

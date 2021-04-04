@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import { Button, Typography } from '@material-ui/core';
+import { Button, Link, Typography } from '@material-ui/core';
 import AdminNavBar from "./AdminNavBar"
 import UserSettings from "./UserSettings"
 import ListOfManager from "./ListOfManager"
@@ -81,13 +81,56 @@ const handleDrawerClose = () => {
              alignItems="center"
             
              >
-                 <Box  pb={2}><Button variant="outlined" color="primary"> Add a new Manager</Button></Box>
+                 <Box  pb={2}><Button href="/addmanager" variant="outlined" color="primary"> 
+                 {/* <Link className={null} href="/addschool" onClick={null} color="inherit">
+    {  "Add a new Manager"}
+  </Link> */} Add A Manager
+              </Button></Box>
                  <ListOfManager/>
                  
                  </Grid>
              </Grid>
             
             </Box>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
             </div>
         </div>
 
