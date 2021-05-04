@@ -12,8 +12,6 @@ import { Form } from 'formik';
 import { grey, deepPurple, red } from "@material-ui/core/colors";
 import Icon from '@material-ui/core/Icon';
 import SaveIcon from '@material-ui/icons/Save';
-import FormikControl from '../FormikControl';
-import MyFieldArray from './MyFieldArray';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -29,9 +27,9 @@ const useStyles = makeStyles((theme) => ({
 
     item0: {
 
-       
+        background: "black",
 
-        height: "auto",
+        height: "300px",
         align: "center"
 
     },
@@ -95,7 +93,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-export default function AddSchoolClass(props) {
+export default function ContactUs() {
     const [open, setOpen] = React.useState(false);
     const classes = useStyles();
 
@@ -106,74 +104,97 @@ export default function AddSchoolClass(props) {
     return (
 
         <div >
-            {/* <AdminNavBar /> */}
+            <AdminNavBar />
 
             <div onClick={handleDrawerClose}>
-                {/* <SummaryStatAdmin /> */}
+                <SummaryStatAdmin />
               
                 
                 
                 <div>
-            <Grid container className={classes.root} justify="center" spacing={4}
-             >
+            <Grid container className={classes.root} justify="center"
+            >
 
-                <Grid item sm={10} md ={10} lg={8} className={classes.item0} >
+                <Grid item sm={10} md ={10} lg={6} className={classes.item0} >
                     <Grid container
                     >
-                    <Paper className={classes.paper}>
-                        <Grid xs={12}>
-                  <Typography>Classes</Typography> 
-                   </Grid>
-               
-                        <Divider className={classes.divider} />
+
+
+
+                        <Paper className={classes.paper}>
+                        <Box borderColor="red" mt={3} mb={5} fontWeight="Bold" fontSize={20} textAlign="left">Contact Us</Box>
+                        <Box mt={6}>
+                                <Divider className={classes.divider} />
+                            </Box>
                             <Grid container>
-{/* 
-                                <Grid item xs={12} md={6}>
-                                <FormikControl control="input" name="nameOfSchool" label="Name of Class" id="nameOfSchool" />
-                                 </Grid>
                                 
 
+
                                 <Grid xs={12} md={6}>
-                                <FormikControl control="input" name="numberOfClasses" label="Number Of Classes" id="numberOfClasses" />
-                                </Grid> */}
-                               
-                                <Grid  className={classes.buttons}>
-                                   <MyFieldArray/>
+                                    <label >
+                                        <Box mb={1} mt={3}  fontWeight="fontWeightMedium"> Secondary Phone Number:</Box>
+                                                 <input type="text" className={classes.inputbox} />
+                                    </label>
                                 </Grid>
-      
 
                             </Grid>
+
+                            <Box mt={6}>
+                                <Divider className={classes.divider} />
+                            </Box>
+
+
+                           
+                                
+
+                                
+
+
+                          
+                               
+                               
+                               
+
+                          
+                            
+
                             <Box mt={6}>
                                 <Divider className={classes.divider} />
                             </Box>
                             
                             <Grid   container
-                            direction="row"
-                            justify="flex-end"
-                            alignItems="flex-start">
+                                    direction="row"
+                                    justify="flex-end"
+                                    alignItems="flex-start">
 
-                        <Grid  className={classes.buttons}>
-                            <Button size="large"    variant="outlined" color="primary"
-                             onClick= {props.previous}
-                            >Back </Button>
-                        </Grid>
+                                <Grid  className={classes.buttons}>
+                                    <Button size="large"   variant="outlined" color="primary">Clear</Button>
+                                </Grid>
 
-                        <Grid  className={classes.buttons}>
-                                <Button
-                                    variant="contained"
-                                    color="primary"
-                                    size="large"
-                                    type="submit"
-                                        >
-                                            NEXT 
-                                </Button>
-                        </Grid>
+                                <Grid  className={classes.buttons}>
+                                        <Button
+                                            variant="contained"
+                                            color="primary"
+                                            size="large"
+                                            className={classes.button}
+                                            startIcon={<SaveIcon />}
+                                                >
+                                                    Save
+                                        </Button>
+                                </Grid>
 
-                    </Grid> 
+                            </Grid>
                             
-                     </Paper>
+                           
+
+
+
+                        </Paper>
+
+
 
                     </Grid>
+
 
                 </Grid>
 

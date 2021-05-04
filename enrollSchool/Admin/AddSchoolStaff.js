@@ -12,6 +12,7 @@ import { Form } from 'formik';
 import { grey, deepPurple, red } from "@material-ui/core/colors";
 import Icon from '@material-ui/core/Icon';
 import SaveIcon from '@material-ui/icons/Save';
+import FormikControl from '../FormikControl';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -122,169 +123,95 @@ export default function AddSchoolStaff(props) {
                             <Divider className={classes.divider} />
                         </Box>
                         <Grid container>
+                          
                             <Grid item xs={12} md={6}>
-                                <label >
-                                    <Box mb={1} mt={3}  fontWeight="fontWeightMedium"> First Name:</Box>
-                                        <input type="text" className={classes.inputbox} required= "true" />
-                                </label>
-                            
-                            </Grid>
-                            <Grid item xs={12} md={6}>
-                                <label >
-                                    <Box mb={1} mt={3}  fontWeight="fontWeightMedium"> Last  Name:</Box>
-                                        <input type="text" className={classes.inputbox} />
-                                </label>
+                              <FormikControl control="input" name="firstName" label=" First Name " id="firstName" />
+                             </Grid>
+
+                             <Grid item xs={12} md={6}>
+                               <FormikControl control="input" name="lastName" label="Last Name " id="lastName" />
                             </Grid>
 
                             <Grid item xs={12} md={6}>
-                                <label >
-                                    <Box mb={1} mt={3}  fontWeight="fontWeightMedium"> Middle  Name:</Box> 
-                                            <input type="text" className={classes.inputbox} />
-                                </label>
-                            </Grid>
-                            
-                            <Grid xs={12} md={6}>
-                                <label >
-                                    <Box mb={1} mt={3}  fontWeight="fontWeightMedium"> Date of Birth:</Box>
-                                            <input type="text" className={classes.inputbox} />
-                                </label>
-                            </Grid>
+                              <FormikControl control="input" name="middleName" label="Middle Name " id="middleName" />
+                             </Grid>
 
-
-                            <Grid xs={12} md={6}>
-                                <label >
-                                    <Box mb={1} mt={3}  fontWeight="fontWeightMedium"> Gender:</Box>
-                                            <input type="text" className={classes.inputbox} />
-                                </label>
-                            </Grid>
-
-                        </Grid>
-
-
-
-                        <Grid container>
-                            <Grid item xs={12} md={6}>
-                                <label >
-                                    <Box mb={1} mt={3}  fontWeight="fontWeightMedium"> primary Number:</Box>
-                                        <input type="text" className={classes.inputbox} />
-                                </label>
-                            
-                            </Grid>
-                            <Grid item xs={12} md={6}>
-                                <label >
-                                    <Box mb={1} mt={3}  fontWeight="fontWeightMedium"> Secondary Phone number:</Box>
-                                        <input type="text" className={classes.inputbox} />
-                                </label>
+                             <Grid item xs={12} md={6}>
+                               <FormikControl control="date" name="dateOfBirth" label="Date Of Birth" id="dateOfBirth" />
                             </Grid>
 
                             <Grid item xs={12} md={6}>
-                                <label >
-                                    <Box mb={1} mt={3}  fontWeight="fontWeightMedium"> Email Address:</Box> 
-                                            <input type="text" className={classes.inputbox} />
-                                </label>
+                              <FormikControl control="input" name="gender" label="Gender " id="gender" />
+                             </Grid>
+
+                             <Grid item xs={12} md={6}>
+                               <FormikControl control="input" name="staffPrimaryPhoneNumber" label=" Primary PhoneNumber" id="staffPrimaryPhoneNumber" />
+                            </Grid>
+
+                            <Grid item xs={12} md={6}>
+                               <FormikControl control="input" name="staffSecondaryPhoneNumber" label=" Secondary Phone Number" id="staffSecondaryPhoneNumber" />
+                            </Grid>
+
+                            <Grid item xs={12} md={6}>
+                              <FormikControl control="input" name="staffEmail" label="Staff Email " id="staffEmail" />
+                             </Grid>
+
+                            <Grid item xs={12} md={6}>
+                              <FormikControl control="input" name="confirmstaffEmail" label="Confirm Staff Email " id="confirmstaffEmail" />
+                             </Grid>
+
+                            
+                        <Grid item xs={12} md={12}>
+                               
+                            <Box mt={3}>
+                                <Divider className={classes.divider} />
+                            </Box>
+
                             </Grid>
                             
-                            <Grid xs={12} md={6}>
-                                <label >
-                                    <Box mb={1} mt={3}  fontWeight="fontWeightMedium"> Confirm Email Address:</Box>
-                                            <input type="text" className={classes.inputbox} />
-                                </label>
-                            </Grid>
-                                        
-                            <Grid xs={12}>
-
-                                <Box mb={1} mt={3}  fontWeight="fontWeightMedium"> Address:</Box>
-                            </Grid>
-                            <Grid xs={12} md={6}>
-                                <label >
-                                    <Box mb={1} mt={3}  fontWeight="fontWeightMedium"> House Number or Description :</Box>
-                                            <input type="text" className={classes.inputbox} />
-                                </label>
-                            </Grid>
-                            
-
-                        
-                            
-
-                            <Grid xs={12} md={6}>
-                                <label >
-                                    <Box mb={1} mt={3}  fontWeight="fontWeightMedium"> Town:</Box>
-                                            <input type="text" className={classes.inputbox} />
-                                </label>
+                             <Grid item xs={12} md={4}>
+                               <FormikControl control="input" name="houseNumber" label="House Number" id="houseNumber" />
                             </Grid>
 
-                            <Grid xs={12} md={6}>
-                                <label >
-                                    <Box mb={1} mt={3}  fontWeight="fontWeightMedium"> City:</Box>
-                                            <input type="text" className={classes.inputbox} />
-                                </label>
-                            </Grid>
-                            <Grid xs={12} md={6}>
-                                <label >
-                                    <Box mb={1} mt={3}  fontWeight="fontWeightMedium"> Region:</Box>
-                                            <input type="text" className={classes.inputbox} />
-                                </label>
+                            <Grid item xs={12} md={4}>
+                              <FormikControl control="input" name="city" label="City " id="city" />
+                             </Grid>
+
+                             <Grid item xs={12} md={4}>
+                               <FormikControl control="input" name="region" label="Region" id="region" />
                             </Grid>
 
+
+                            <Grid item xs={12} md={4}>
+                              <FormikControl control="input" name="staffType" label="Staff Type " id="staffType" />
+                             </Grid>
+
+                             <Grid item xs={12} md={4}>
+                               <FormikControl control="input" name="staffRank" label="Staff Rank" id="staffRank" />
+                            </Grid>
+
+                            <Grid item xs={12} md={4}>
+                               <FormikControl control="input" name="dateHired" label="Date Hired "id="dateHired" />
+                            </Grid>
+
+                            <Grid item xs={12} md={4}>
+                               <FormikControl control="input" name="uploadPicture" label="Upload Picture"id="uploadPicture" />
+                            </Grid>
+
+                            <Grid item xs={12} md={4}>
+                               <FormikControl control="input" name="uploadResume" label="Upload Resume"id="uploadResume" />
+                            </Grid>
+
+                            <Grid item xs={12} md={4}>
+                               <FormikControl control="input" name="uploadID" label="Upload ID"id="uploadID" />
+                            </Grid>
+
+                 
                         </Grid>
                         <Box mt={6}>
                             <Divider className={classes.divider} />
                         </Box>
 
-
-
-                        <Grid container>
-
-                            <Grid item xs={12} md={4}>
-                                <label >
-                                    <Box mb={1} mt={3}  fontWeight="fontWeightMedium"> Staff Type:</Box>
-                                        <input type="text" className={classes.inputbox} />
-                                </label>
-                            </Grid>
-
-                            <Grid item xs={12} md={4}>
-                                <label >
-                                    <Box mb={1} mt={3}  fontWeight="fontWeightMedium"> Staff Rank:</Box>
-                                        <input type="text" className={classes.inputbox} />
-                                </label>
-                            </Grid>
-                            <Grid item xs={12} md={4}>
-                                <label >
-                                    <Box mb={1} mt={3}  fontWeight="fontWeightMedium"> Date Hired:</Box>
-                                        <input type="text" className={classes.inputbox} />
-                                </label>
-                            </Grid>
-
-                            <Grid item xs={12} md={4}>
-                                <label >
-                                    <Box mb={1} mt={3}  fontWeight="fontWeightMedium"> Upload Picture:</Box>
-                                        <input type="text" className={classes.inputbox} />
-                                </label>
-                            </Grid>
-
-                            <Grid item xs={12} md={4}>
-                                <label >
-                                    <Box mb={1} mt={3}  fontWeight="fontWeightMedium"> Upload Resume:</Box>
-                                        <input type="text" className={classes.inputbox} />
-                                </label>
-                            </Grid>
-                        
-                            <Grid item xs={12} md={4}>
-                                <label >
-                                    <Box mb={1} mt={3}  fontWeight="fontWeightMedium"> Upload ID:</Box>
-                                        <input type="text" className={classes.inputbox} />
-                                </label>
-                            </Grid>
-                        
-                        
-
-                        </Grid>
-
-                        
-
-                        <Box mt={6}>
-                            <Divider className={classes.divider} />
-                        </Box>
                         
                         <Grid   container
                             direction="row"
@@ -294,7 +221,7 @@ export default function AddSchoolStaff(props) {
                         <Grid  className={classes.buttons}>
                             <Button size="large"    variant="outlined" color="primary"
                              onClick= {props.previous}
-                            >Back e </Button>
+                            >Back</Button>
                         </Grid>
 
                         <Grid  className={classes.buttons}>
@@ -302,8 +229,8 @@ export default function AddSchoolStaff(props) {
                                     variant="contained"
                                     color="primary"
                                     size="large"
-                                    type="button"
-                                    onClick= {props.next}
+                                    type="submit"
+                                    // onClick= {props.next}
                                         >
                                             NEXT 
                                 </Button>

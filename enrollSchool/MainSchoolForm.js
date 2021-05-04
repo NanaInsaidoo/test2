@@ -49,6 +49,7 @@ const validationSchema = Yup.object({
 
   })
 
+
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -137,7 +138,6 @@ export default function MainSchoolForm() {
             <FormikControl control= "input" name = "socialMediaNameURL" label = "SocialMediaNameURL URL" id = "socialMediaNameURL"/>
        <br/>
             
-
        <FieldArray
             name="users"
             render={arrayHelpers => {

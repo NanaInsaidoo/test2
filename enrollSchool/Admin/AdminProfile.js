@@ -74,31 +74,23 @@ export default function InteractiveList() {
                 direction="column"
                 justify="center"
                 alignItems="center"
-
             >
+
                 <Grid item sm={12} >
                     <Avatar alt="Remy Sharp" src={Admin_photo} className={classes.user_profle_pic} />
-               change remove
-
-
-
-               
+                    change remove
                 </Grid>
 
                 <Grid item sm={12}>
-                 
                     <Typography variant="h6" gutterBottom>
                     <Box fontWeight="fontWeightBold" m={1}>   Diamatic Kojo   </Box>
                         </Typography>
-                
                 </Grid>
 
                 <Grid item sm={12}>
-               
                     <Typography className={classes.typography} gutterBottom  >
                     <Box fontWeight="fontWeightBold" m={1}> diamatic2000@yahoo.co.uk </Box>
                     </Typography>
-                   
                </Grid>
 
                 <Grid item sm={12} >

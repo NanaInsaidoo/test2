@@ -26,26 +26,19 @@ const StyledTableRow = withStyles((theme) => ({
   },
 }))(TableRow);
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
+function createData(name, manager, managertype, date, studentsize,typeofschool,status) {
+  return {name, manager, managertype, date, studentsize,typeofschool,status};
 }
 
 const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  // createData('Royal Crown Int School', "John Haper", "RAM","23rd July 1983", "500","Kindergaten","Completed"),
+  createData("Royal Crown Int School", "Joe Ansah44444444444", "RAM333333333333333", "12TH May 1988", "600","Kindergatten","Not Complete"),
+
+  createData("Royal Crown Int School", "Joe Ansah", "RAM", "12TH May 1988", "600","Kindergatten","Not Complete"),
+  createData("Royal Crown Int School", "Joe Ansah", "RAM", "12TH May 1988", "600","Kindergatten","Not Complete"),
+
+  createData("Royal Crown Int School", "Joe Ansah", "RAM", "12TH May 1988", "600","Kindergatten","Not Complete"),
+
 ];
 
 const useStyles = makeStyles({
@@ -62,21 +55,32 @@ export default function CustomizedTables() {
       <Table className={classes.table} aria-label="customized table">
         <TableHead>
           <TableRow>
-            <StyledTableCell>Dessert (100g serving)</StyledTableCell>
-            <StyledTableCell align="right">Calories</StyledTableCell>
-            <StyledTableCell align="right">Fat&nbsp;(g)</StyledTableCell>
-            <StyledTableCell align="right">Carbs&nbsp;(g)</StyledTableCell>
-            <StyledTableCell align="right">Protein&nbsp;(g)</StyledTableCell>
+            <StyledTableCell>Name Of School </StyledTableCell>
+            <StyledTableCell align="right">Manager</StyledTableCell>
+            <StyledTableCell align="right">Manager Type</StyledTableCell>
+            <StyledTableCell align="right">Date Enrolled </StyledTableCell>
+            <StyledTableCell align="right">Students Size </StyledTableCell>
+            <StyledTableCell align="right">Type of School </StyledTableCell>
+            <StyledTableCell align="right">Setup Status</StyledTableCell>
+
           </TableRow>
         </TableHead>
         <TableBody>
           {rows.map((row) => (
             <StyledTableRow key={row.name}>
+
               <StyledTableCell component="th" scope="row">{row.name}  </StyledTableCell>
-              <StyledTableCell align="right">{row.calories}</StyledTableCell>
-              <StyledTableCell align="right">{row.fat}</StyledTableCell>
-              <StyledTableCell align="right">{row.carbs}</StyledTableCell>
-              <StyledTableCell align="right">{row.protein}</StyledTableCell>
+              <StyledTableCell align="right">{row.manager}  </StyledTableCell>
+              <StyledTableCell align="right">{row.managertype}</StyledTableCell>
+              <StyledTableCell align="right">{row.date}</StyledTableCell>
+              <StyledTableCell align="right">{row.studentsize}</StyledTableCell>
+              <StyledTableCell align="right">{row.typeofschool}</StyledTableCell>
+              <StyledTableCell align="right">{row.status}</StyledTableCell>
+              {/* <StyledTableCell align="right">{row.protein}</StyledTableCell> */}
+
+
+              {/* return { name, manager, managertype, date,studentsize, typeofschool,status}; */}
+
             </StyledTableRow>
           ))}
         </TableBody>

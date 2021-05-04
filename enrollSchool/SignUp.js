@@ -13,20 +13,9 @@ import { Formik, Form } from "formik";
 import * as yup from "yup";
 
 import Logo from './Logo.jpg'
+import Copyright from "././Admin/Copyright"
 
 
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        SukuulApp
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
 
 let SignupSchema = yup.object().shape({
   firstName: yup.string().required("This field is required."),
@@ -92,8 +81,12 @@ const useStyles = makeStyles(theme => ({
             password: ""
           }}
           validationSchema={SignupSchema}
-          onSubmit={values => {
+
+          onSubmit={(values,e )=> {
             console.log(values);
+            console.log( e.resetForm({values:""}));
+            e.resetForm({values:""})
+
           }}
         >
           {({ errors, handleChange, touched }) => (
@@ -187,7 +180,7 @@ const useStyles = makeStyles(theme => ({
               </Link>
             </Grid>
             <Box mt={8}>
-        <Copyright />
+        <Copyright/>
       </Box>
     </Container>
     

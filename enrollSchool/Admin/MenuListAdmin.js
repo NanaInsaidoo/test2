@@ -24,7 +24,8 @@ export default function MenuListAdmin() {
     <div>
       <Button aria-controls="simple-menu" aria-haspopup="true" onClick={null}>
       <Typography color="white" variant="title">
-                    <Link href="/" style={{paddingLeft: 13, textDecoration: 'none', color:'white'}}>   Home </Link>
+                    <Link href="/" style={{paddingLeft: 13, textDecoration: 'none', color:'white'}}>
+                         Home </Link>
                </Typography>
       </Button>
       <Menu
@@ -41,7 +42,10 @@ export default function MenuListAdmin() {
 
       <Button aria-controls="simple-menu" aria-haspopup="true" onClick={null}>
       <Typography color="white" variant="title">
-                    <Link href="#" style={{paddingLeft: 13, textDecoration: 'none', color:'white'}}>  Schools </Link>
+                    <Link href="adminSchools" 
+                    style={{paddingLeft: 13, textDecoration: 'none', color:'white'}}> 
+                     Schools
+                      </Link>
                </Typography>
       </Button>
       <Menu
@@ -58,7 +62,8 @@ export default function MenuListAdmin() {
 
       <Button aria-controls="simple-menu" aria-haspopup="true" onClick={null}>
       <Typography color="white" variant="title">
-                    <Link href="#" style={{paddingLeft: 13, textDecoration: 'none', color:'white'}}>   Account Managers </Link>
+                    <Link href="admin" style={{paddingLeft: 13, textDecoration: 'none', color:'white'}}> 
+                      Account Managers </Link>
                </Typography>
       </Button>
       <Menu
@@ -72,11 +77,13 @@ export default function MenuListAdmin() {
         <MenuItem onClick={handleClose}>My account</MenuItem>
         <MenuItem onClick={handleClose}>Logout</MenuItem>
       </Menu>
-      <Button aria-controls="simple-menu" aria-haspopup="true" onClick={null}>
+      {/* <Button aria-controls="simple-menu" aria-haspopup="true" onClick={null}>
       <Typography color="white" variant="title">
-                    <Link href="#" style={{paddingLeft: 13, textDecoration: 'none', color:'white'}}>   Messages </Link>
+                    <Link href="contacUs" style={{paddingLeft: 13, textDecoration: 'none', color:'white'}}> 
+                      Contact Us</Link>
                </Typography>
-      </Button>
+      </Button> */}
+      
       <Menu
         id="simple-menu"
         anchorEl={anchorEl}

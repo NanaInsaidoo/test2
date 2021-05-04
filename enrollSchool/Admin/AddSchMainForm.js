@@ -4,13 +4,15 @@ import { makeStyles } from '@material-ui/core/styles';
 import AddSchoolDetail from './AddSchoolDetail';
 import AddSchoolStaff from './AddSchoolStaff';
 import AddSchoolClass from './AddSchoolClass';
-import { CircularProgress, Container, CssBaseline, Grid, Step, StepLabel, Stepper, Typography } from '@material-ui/core';
+import { Box, CircularProgress, Container, CssBaseline, Grid, Step, StepLabel, Stepper, Typography } from '@material-ui/core';
 import { FieldArray, Form, Formik } from 'formik';
 import FormikControl from '../FormikControl';
 import AdminNavBar from "./AdminNavBar"
 import SummaryStatAdmin from "./SummaryStatAdmin"
 import AddSchoolSuccess from './AddSchoolSuccess';
-
+import * as Yup from 'yup';
+import validationSchemaArray from "./ValidateAddschForm"
+import MyFieldArray from './MyFieldArray';
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -21,23 +23,53 @@ function sleep(ms) {
     const [activeStep, setActiveStep] = useState(0);
     // const { values, submitForm } = useFormikContext();
     // console.log("values",values)
-    const steps = ['Form 1', 'Form 2','Form 1', 'Success'];
+    const steps = ['Basic', 'Admin User','Class', 'Finish'];
   
     const isLastStep = activeStep === steps.length - 1;
   
     const initialValues = {
-      nameOfSchool: "",
-      schoolRegistrationID: "",
-      businessRegistrationID: "",
-      primaryPhoneNumber: "",
+
+        nameOfSchool : "",
+        schoolRegistrationID : "",
+        businessRegistrationID : "",
+        primaryPhoneNumber : "",
+        secondaryPhoneNumber : "",
+        schoolemail : "",
+        schoolWebsite : "",
+
+        firstName : "",
+        lastName : "",
+        middleName : "",
+        dateOfBirth : "",
+        gender : "",
+        staffPrimaryPhoneNumber : "",
+        staffSecondaryPhoneNumber:"",
+        staffEmail : "",
+        confirmstaffEmail : "",
+        houseNumber : "",
+        city : "",
+        region : "",
+        staffType : "",
+        staffRank : "",
+        dateHired : "",
+        uploadPicture : "",
+        uploadResume : "",
+        uploadID : "",
+
+        levels: [
+          {
+            classLevelsName: "",
+            classLevelsQuantity: ""
+          }
+        ]
   
     }
-  
-    const validationSchema =null
+
+   
   
     const onSubmit = async (submitProps, e) => {
       await sleep(1000);
-      e.setSubmitting(false);
+      // e.setSubmitting(false);
   
       setActiveStep(activeStep + 1);
       // console.log("initial values",initialValues);
@@ -48,7 +80,9 @@ function sleep(ms) {
     }
   
     function _renderStepContent(activeStep) {
+      
         switch (activeStep) {
+
             case 0:
               return <AddSchoolDetail previous ={previous} next={next}/>;
             case 1:
@@ -59,12 +93,10 @@ function sleep(ms) {
               return <AddSchoolSuccess previous ={previous} next={next} />;
             default:
               return <div>Congratulation submitted</div>
-          
       }
+
     }
-  
-  
-  
+     
     function next() {
       sleep(500)
       setActiveStep(activeStep + 1);
@@ -83,16 +115,13 @@ function sleep(ms) {
     async function previous() {
       setActiveStep(activeStep - 1);
     }
-  
-  
+    
     return (
   
-  
-  
-      <Formik
+        <Formik
         initialValues={initialValues}
         onSubmit={onSubmit}
-        validationSchema={null}
+        validationSchema={validationSchemaArray[activeStep]}
       >
   
         {formik => {
@@ -101,23 +130,34 @@ function sleep(ms) {
   
   
             <div>
-  
-              
-  
-              <Form>
-   <AdminNavBar />
+            <Form>
+            <AdminNavBar />
+            <SummaryStatAdmin />
 
-                <SummaryStatAdmin />
+            <Grid   container spacing={1}
+                direction="row"
+                justify="center"
+                alignItems="center"> 
 
+            <Grid item lg ={12}>
+            <Box align="center" mt={6} ><Typography font="bold" variant="h6" gutterBottom>Add a new School</Typography></Box>
+          </Grid>
 
+          <Grid item lg= {6} > 
 
-                  <Stepper activeStep={activeStep} >
+        <Box mt={3}mb={-1}>
+              <Stepper  activeStep={activeStep} >
                 {steps.map(label => (
                   <Step key={label}>
                     <StepLabel>{label}</StepLabel>
                   </Step>
                 ))}
               </Stepper>
+        </Box>
+
+      </Grid>
+      </Grid>
+
                 {_renderStepContent(activeStep)}
   
                 <button
@@ -137,68 +177,7 @@ function sleep(ms) {
   
                 {activeStep}
   
-  
-                <FieldArray
-                  name="users"
-                  render={arrayHelpers => {
-                    // console.log("values",arrayHelpers.form.values.users)
-                    const users = arrayHelpers.form.values.users;
-                    return (
-                      <div >
-                        {users && users.length > 0
-                          ? users.map((user, index) => (
-                            <div key={index}>
-                              {/* <Field
-                              placeholder="user name"
-                              name={`users.${index}.name`}
-                            />
-                            <ErrorMessage name={`users.${index}.name`} /> */}
-                              <FormikControl control="input" name={`users.${index}.name`} label="Name of School" id={`users.${index}.name`} />
-                              <br />
-  
-                              {/* <Field
-                              placeholder="user email"
-                              name={`users.${index}.email`}
-                            />
-                            <ErrorMessage name={`users.${index}.email`} /> */}
-                              <FormikControl control="input" name={`users.${index}.email`} label="email of School" id={`users.${index}.email`} />
-  
-                              <br />
-  
-                              <button
-                                type="button"
-                                onClick={() => arrayHelpers.remove(index)} // remove a friend from the list
-                              >
-                                -
-                            </button>
-                              <br />
-                              <br />
-                            </div>
-                          ))
-                          : null}
-                        <button
-                          type="button"
-                          onClick={() =>
-                            arrayHelpers.push({
-                              name: "",
-                              email: ""
-                            })
-                          } // insert an empty string at a position
-                        >
-                          add a User
-                    </button>
-                        <br />
-                        <br />
-                        <br />
-                        {/* <div>
-                      <button type="submit">Form Submit FIELD</button>
-                    </div> */}
-                      </div>
-                    );
-                  }
-                  }
-                />
-  
+ 
                 {formik.isSubmitting && (
                   <CircularProgress
                     size={24}
@@ -212,10 +191,7 @@ function sleep(ms) {
   
   
         }}
-  
-  
-  
-  
+ 
       </Formik>
     )
   

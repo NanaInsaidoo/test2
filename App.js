@@ -33,6 +33,8 @@ import AAA from "./enrollSchool/Admin/AAA"
 
 import AddSchMainForm from './enrollSchool/Admin/AddSchMainForm';
 import SchoolsListAdmin from './enrollSchool/Admin/SchoolsListAdmin';
+import ContactUs from './enrollSchool/Admin/ContactUs';
+import MyFieldArray from './enrollSchool/Admin/MyFieldArray';
 
 function App() {
   return (
@@ -46,8 +48,7 @@ function App() {
 {/* <AddSchoolClass/>
 <AddSchoolStaff/> */}
 
-
-      <Router>
+ <Router>
         <Switch>
           <Route path="/" exact component={SignIn} />
           <Route path="/forgotpassword" exact component={ForgotPassword} />
@@ -58,11 +59,15 @@ function App() {
           <Route path="/managerProfile" exact component={ManagerProfile} />
           <Route path="/addManager" exact component={AddManagerByAdmin} />
           <Route path="/addSchool" exact component={AddSchMainForm} />
+          <Route path="/contacUs" exact component={ContactUs} />
+
           <div>
           <Route component={PageNotFound} />          
           </div>
         </Switch>
-      </Router>
+      </Router> 
+
+      {/* <MyFieldArray /> */}
 {/* <AddSchMainForm/> */}
       {/* <AAA/> */}
       {/* <MyGrid/> */}

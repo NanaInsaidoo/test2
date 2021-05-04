@@ -119,7 +119,6 @@ const redirect = () => {
                              direction="row"
                              justify="center"
                              alignItems="center"
-
                             >
 
                                 <Paper className={classes.paper}>
@@ -140,7 +139,7 @@ const redirect = () => {
 
                                         <Grid item xs={12} md={12}>
                                             <Typography color="green" variant="h5" gutterBottom>
-                                                Acccont has been created successfully!
+                                                Account has been created successfully!
                                             </Typography>
                                         </Grid>
                                         

@@ -14,6 +14,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import logo from "./sample-logo1.JPG"
+import { useHistory } from 'react-router-dom';
 
 function Copyright() {
   return (
@@ -58,6 +59,12 @@ const chager= (e)=> {
   
 export default function SignIn() {
   const classes = useStyles();
+
+  let history = useHistory();
+
+  const redirect = () => {
+    history.push('/admin')
+  }
 
   return (
     <Container component="main" maxWidth="xs">
@@ -105,7 +112,7 @@ export default function SignIn() {
             variant="contained"
             color="primary"
             className={classes.submit}
-            
+            onClick= {redirect}
           >
             Sign In
           </Button>
@@ -124,6 +131,7 @@ export default function SignIn() {
         </form>
       </div>
       <Box mt={8}>
+        {/* <Phone2/> */}
         <Copyright />
       </Box>
     </Container>

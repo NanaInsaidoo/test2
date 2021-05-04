@@ -99,10 +99,8 @@ function AddSchoolDetail(props) {
     const handleDrawerClose = () => {
         setOpen(!open);
     };
+
     return (
-
-
-
 
         <div className={classes.ppp} >
             {/* <AdminNavBar /> */}
@@ -110,12 +108,9 @@ function AddSchoolDetail(props) {
             <div onClick={handleDrawerClose}>
                 {/* <SummaryStatAdmin /> */}
 
-
-
                 <div>
                     <Grid container className={classes.root} justify="center"
                     >
-
                         <Grid item sm={10} md={10} lg={6} className={classes.item0} >
                             <Grid 
                              container
@@ -126,17 +121,18 @@ function AddSchoolDetail(props) {
                             >
 
                                 <Paper className={classes.paper}>
-                                    <Grid xs={12}>
-                                        <Typography>Basic Information</Typography>
-                                    </Grid>
+                                        <Grid xs={12}>
+                                            <Typography>Basic Information </Typography>
+                                        </Grid>
 
                                     <Grid container spacing={3}>
 
                                         <Grid item xs={12} md={12}>
                                             <Divider mb={5} className={classes.divider} />
                                         </Grid>
+
                                         <Grid item xs={12} md={12}>
-                                            <FormikControl control="input" name="nameOfSchool " label="Name of School :" id="nameOfSchool" />
+                                            <FormikControl control="input" name="nameOfSchool" label="Name of School" id="nameOfSchool" />
                                         </Grid>
 
                                         <Grid item xs={12} md={6}>
@@ -156,12 +152,12 @@ function AddSchoolDetail(props) {
                                         </Grid>
 
                                         <Grid item xs={12} md={6}>
-                                            <FormikControl control="input" name="schoolEmail" label="School email" id="schoolEmail" />
-                                        </Grid>
-                                        <Grid item xs={12} md={6}>
-                                            <FormikControl control="input" name="webSite" label="WebSite URL" id="webSite" />
+                                            <FormikControl control="input" name="schoolemail" label="School Email" id="schoolEmail" />
                                         </Grid>
 
+                                        <Grid item xs={12} md={6}>
+                                            <FormikControl control="input" name="schoolWebsite" label="WebSite URL" id="webSite" />
+                                        </Grid>
                                    
                                     </Grid>
 
@@ -170,7 +166,7 @@ function AddSchoolDetail(props) {
                                     </Box>
                                     
                                     
-                                    <Grid   container
+                        <Grid   container
                             direction="row"
                             justify="flex-end"
                             alignItems="flex-start">
@@ -186,19 +182,16 @@ function AddSchoolDetail(props) {
                                     variant="contained"
                                     color="primary"
                                     size="large"
-                                    type="button"
-                                    onClick= {props.next}
+                                    type="submit"
+                                    // onClick= {props.next}
                                         >
                                             NEXT
                                 </Button>
+                                
                         </Grid>
 
                     </Grid> 
-                    
-
-                                </Paper>
-
-
+                               </Paper>
 
                             </Grid>
 
@@ -210,8 +203,6 @@ function AddSchoolDetail(props) {
 
             </div>
         </div>
-
-
 
     );
 
