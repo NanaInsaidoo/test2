@@ -7,6 +7,11 @@ import CheckboxGroup from './CheckboxGroup'
 // import ChakraInput from './ChakraInput'
 import Textarea from './Textarea'
 import DatePicker from './Admin/DatePicker'
+import ImageUpload from './UploadID'
+ import UploadPicture from './UploadPicture'
+ import UploadID from './UploadID'
+import UploadResume from './UploadResume'
+
 
 
 
@@ -27,6 +32,16 @@ switch(control){
         return <DatePicker {...rest} />
       // case 'chakraInput':
       //   return <ChakraInput {...rest} />
+
+      case 'picture':
+        return <UploadPicture {...rest} />
+
+      case 'id':
+        return <UploadID {...rest} />
+       
+     case 'resume':
+            return <UploadResume {...rest} />
+
       default:
         return null
     }

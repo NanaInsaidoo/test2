@@ -35,6 +35,7 @@ import AddSchMainForm from './enrollSchool/Admin/AddSchMainForm';
 import SchoolsListAdmin from './enrollSchool/Admin/SchoolsListAdmin';
 import ContactUs from './enrollSchool/Admin/ContactUs';
 import MyFieldArray from './enrollSchool/Admin/MyFieldArray';
+import AddSchoolReviewForm from './enrollSchool/Admin/AddSchoolReviewForm';
 
 function App() {
   return (
@@ -60,6 +61,8 @@ function App() {
           <Route path="/addManager" exact component={AddManagerByAdmin} />
           <Route path="/addSchool" exact component={AddSchMainForm} />
           <Route path="/contacUs" exact component={ContactUs} />
+
+          <Route path="/addschoolreview" exact component={AddSchoolReviewForm} />
 
           <div>
           <Route component={PageNotFound} />          

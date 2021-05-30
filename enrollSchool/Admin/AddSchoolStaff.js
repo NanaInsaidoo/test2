@@ -105,6 +105,7 @@ export default function AddSchoolStaff(props) {
     return (
 
         <div>
+            
         <Grid container className={classes.root} justify="center"
         >
 
@@ -191,19 +192,35 @@ export default function AddSchoolStaff(props) {
                             </Grid>
 
                             <Grid item xs={12} md={4}>
-                               <FormikControl control="input" name="dateHired" label="Date Hired "id="dateHired" />
+                               <FormikControl control="date" name="dateHired" label="Date Hired "id="dateHired"  />
                             </Grid>
 
-                            <Grid item xs={12} md={4}>
-                               <FormikControl control="input" name="uploadPicture" label="Upload Picture"id="uploadPicture" />
+                            <Grid item xs={12} md={12}>
+                               <FormikControl control="picture" name="uploadPicture" label="Upload Picture"id="uploadPicture"
+                                 uploadPicture = {props.uploadPicture}
+                                 onChangeID={props.onChangeID} onChangePicture = {props.onChangePicture}
+                                 deletePicture= {props.deletePicture} 
+
+                                 />
+                               
                             </Grid>
 
-                            <Grid item xs={12} md={4}>
-                               <FormikControl control="input" name="uploadResume" label="Upload Resume"id="uploadResume" />
+                            <Grid item xs={12} md={12}>
+                               <FormikControl control="resume" name="uploadResume" label="Upload Resume"id="uploadResume" 
+                                 uploadResume ={props.uploadResume}
+                                 onChangeResume ={props.onChangeResume}
+                                 deleteResume= {props.deleteResume}  />
+
                             </Grid>
 
-                            <Grid item xs={12} md={4}>
-                               <FormikControl control="input" name="uploadID" label="Upload ID"id="uploadID" />
+                            <Grid item xs={12} md={12}>
+                               <FormikControl control="id" name="uploadID" label="Upload ID"id="uploadID"
+                                uploadID={props.uploadID} 
+                                onChangeID={props.onChangeID}      
+                                deleteID={props.deleteID}
+
+                                />
+                               {/* <Button onClick={props.deleteFile}>"gogo"</Button> */}
                             </Grid>
 
                  
@@ -232,7 +249,7 @@ export default function AddSchoolStaff(props) {
                                     type="submit"
                                     // onClick= {props.next}
                                         >
-                                            NEXT 
+                                            NEXT
                                 </Button>
                         </Grid>
 

@@ -13,6 +13,7 @@ import EditIcon from '@material-ui/icons/Edit';
 import EditName from './EditName'
 import Divider from '@material-ui/core/Divider';
 
+
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
@@ -51,32 +52,27 @@ const useStyles = makeStyles((theme) => ({
     main_container2: {
         background: "red",
     },
+    
     user_profle_pic: {
         width: theme.spacing(15),
         height: theme.spacing(15)
     },
+
     typography: {
-
         useNextVariants: true,
-
         color: theme.palette.text.secondary,
         fontSize: 18,
         fontFamily: "Montserrat",
         fontWeight: 300,
         textAlign: 'center',
-        
-        
-
     },
+
     typography2: {
-
         useNextVariants: true,
-
         color: theme.palette.text.secondary,
         fontSize: 15,
         fontFamily: "Montserrat",
         fontWeight: 300,
-        
         padding: theme.spacing(-2),
         margin: theme.spacing(-1),
             }

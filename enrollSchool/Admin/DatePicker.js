@@ -61,6 +61,7 @@ function DatePicker (props) {
             
             <Box mt={1}>
             <DateView
+            dateFormat="dd MMMM yyyy"
               id={name}
               {...field}
               {...rest}
